@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+// components
+import Form from "./components/Form";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [recipes, setRecipes] = useState([]);
+	useEffect(() => {
+		const getRecipe = async () => {
+			const apiKey = "9fb125e6a4c34f5db288d1e22f2832ed";
+
+			const apiCall = await fetch(
+				`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`
+			);
+			const data = await apiCall.json();
+			console.log(data);
+			setRecipes(data.results);
+		};
+		getRecipe();
+	}, []);
+
+	return (
+		<div>
+			<Form />
+			{recipes.map((recipe) => {
+				return <p key={recipe.id}>{recipe.title}</p>;
+			})}
+		</div>
+	);
 }
 
 export default App;
