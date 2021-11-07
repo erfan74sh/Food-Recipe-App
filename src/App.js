@@ -15,7 +15,7 @@ function App() {
 				`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`
 			);
 			data = await apiCall.json();
-			// console.log(data);
+			console.log(data);
 			setRecipes(data.results);
 		};
 		getRecipe();
@@ -33,16 +33,23 @@ function App() {
 	return (
 		<div>
 			<Form getRecipe1={getRecipe1} />
-			<div className="query-foods">
-				{recipes.map((recipe) => {
-					return (
-						<div key={recipe.id} className="query-foods__food-card">
-							<img src={recipe.image} alt={recipe.title} />
-							<p>{recipe.title}</p>
-						</div>
-					);
-				})}
-			</div>
+
+			<section className="query-foods">
+				<div className="container">
+					{recipes.map((recipe) => {
+						return (
+							<div key={recipe.id} className="query-foods__food-card">
+								<img src={recipe.image} alt={recipe.title} />
+								<div className="query-foods__food-card__info">
+									<p className="query-foods__food-card__info__title">
+										{recipe.title}
+									</p>
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</section>
 		</div>
 	);
 }
