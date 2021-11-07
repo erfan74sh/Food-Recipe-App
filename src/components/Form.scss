@@ -1,0 +1,28 @@
+.search-and-filter {
+	padding: 2rem 8rem;
+	&__search {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		input {
+			height: 2.8rem;
+			width: 30rem;
+			padding: 0.5rem 1rem;
+			line-height: 1.8rem;
+			font-size: 1.2rem;
+			border: 1px solid gray;
+			border-radius: 0.7rem;
+			outline: none;
+		}
+		button {
+			height: 2.8rem;
+			outline: none;
+			margin-left: 1rem;
+			padding: 0.5rem 1rem;
+			line-height: 1.8rem;
+			font-size: 1.2rem;
+			border-radius: 0.7rem;
+			border: 1px solid gray;
+		}
+	}
+}

@@ -1,11 +1,15 @@
 import React from "react";
+// style
+import "./Form.scss";
 
 const Form = ({ getRecipe1 }) => {
 	return (
-		<form onSubmit={getRecipe1}>
-			<input type="text" name="recipeName" />
-			<button>search</button>
-		</form>
+		<section className="search-and-filter">
+			<form onSubmit={getRecipe1} className="search-and-filter__search">
+				<input type="text" name="recipeName" />
+				<button>search</button>
+			</form>
+		</section>
 	);
 };
 
