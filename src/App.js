@@ -16,7 +16,6 @@ function App() {
 				`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`
 			);
 			data = await apiCall.json();
-			console.log(data);
 			setRecipes(data.results);
 		};
 		getRecipe();
