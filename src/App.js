@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 // components
 import Form from "./components/Form";
+import Recipes from "./components/Recipes";
 // style
 import "./App.scss";
 
@@ -33,23 +34,7 @@ function App() {
 	return (
 		<div>
 			<Form getRecipe1={getRecipe1} />
-
-			<section className="query-foods">
-				<div className="container">
-					{recipes.map((recipe) => {
-						return (
-							<div key={recipe.id} className="query-foods__food-card">
-								<img src={recipe.image} alt={recipe.title} />
-								<div className="query-foods__food-card__info">
-									<p className="query-foods__food-card__info__title">
-										{recipe.title}
-									</p>
-								</div>
-							</div>
-						);
-					})}
-				</div>
-			</section>
+			<Recipes recipes={recipes} />
 		</div>
 	);
 }
