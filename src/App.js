@@ -8,15 +8,24 @@ import "./App.scss";
 function App() {
 	const apiKey = "9fb125e6a4c34f5db288d1e22f2832ed";
 	let apiCall, data;
+	const [errors, setErrors] = useState("");
 
 	const [recipes, setRecipes] = useState([]);
 	useEffect(() => {
 		const getRecipe = async () => {
-			apiCall = await fetch(
-				`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`
-			);
-			data = await apiCall.json();
-			setRecipes(data.results);
+			try {
+				apiCall = await fetch(
+					`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`
+				);
+				if (!apiCall.ok) {
+					throw apiCall.status;
+				}
+				data = await apiCall.json();
+				setRecipes(data.results);
+			} catch (e) {
+				console.error(`error code: ${e}`);
+				setErrors(e);
+			}
 		};
 		getRecipe();
 	}, []);
@@ -32,8 +41,17 @@ function App() {
 	};
 	return (
 		<div>
-			<Form getRecipe1={getRecipe1} />
-			<Recipes recipes={recipes} />
+			{errors.length === 0 ? (
+				<>
+					<Form getRecipe1={getRecipe1} />
+					<Recipes recipes={recipes} />
+				</>
+			) : (
+				<>
+					<h1>Ooops! Somthing Bad Happend</h1>
+					<p>Error type {errors}</p>
+				</>
+			)}
 		</div>
 	);
 }
