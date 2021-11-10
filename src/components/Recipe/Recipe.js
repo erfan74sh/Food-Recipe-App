@@ -23,28 +23,43 @@ const Recipe = () => {
 		<main className="recipe">
 			<section className="recipe__info">
 				<div className="recipe__info__summary">
-					<h2>{specificRecipe.title}</h2>
+					<h1 className="recipe__info__summary__title">
+						{specificRecipe.title}
+					</h1>
 					<ul className="recipe__info__summary__status">
-						<li>
-							<span>icon</span>
-							<span>{`$${specificRecipe.pricePerServing} per serving`}</span>
-						</li>
-						<li>
-							<span>icon</span>
-							<span>{`${specificRecipe.aggregateLikes} likes`}</span>
-						</li>
-						<li>
-							<span>icon</span>
-							<span>{`ready in ${specificRecipe.readyInMinutes} minutes`}</span>
-						</li>
-						<li>
-							<span>icon</span>
-							<span>{`Spoonacular Score: ${specificRecipe.spoonacularScore}%`}</span>
-						</li>
+						<div>
+							<li>
+								<span>
+									<i class="fas fa-dollar-sign"></i>
+								</span>
+								<span>{`$${specificRecipe.pricePerServing} per serving`}</span>
+							</li>
+							<li>
+								<span>
+									<i class="fas fa-heart"></i>
+								</span>
+								<span>{`${specificRecipe.aggregateLikes} likes`}</span>
+							</li>
+						</div>
+						<div>
+							<li>
+								<span>
+									<i class="fas fa-clock"></i>
+								</span>
+								<span>{`ready in ${specificRecipe.readyInMinutes} minutes`}</span>
+							</li>
+							<li>
+								<span>
+									<i class="fas fa-star"></i>
+								</span>
+								<span>{`Spoonacular Score: ${specificRecipe.spoonacularScore}%`}</span>
+							</li>
+						</div>
 					</ul>
 					<p className="recipe__info__summary__text">
 						{specificRecipe.summary}
 					</p>
+					<button type="button">go home</button>
 				</div>
 				<img src={specificRecipe.image} alt={specificRecipe.title} />
 			</section>
