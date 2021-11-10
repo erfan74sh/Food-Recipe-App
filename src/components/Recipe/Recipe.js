@@ -56,9 +56,10 @@ const Recipe = () => {
 							</li>
 						</div>
 					</ul>
-					<p className="recipe__info__summary__text">
-						{specificRecipe.summary}
-					</p>
+					<p
+						className="recipe__info__summary__text"
+						dangerouslySetInnerHTML={{ __html: specificRecipe.summary }}
+					></p>
 					<button type="button">
 						<Link to="/">go home</Link>
 					</button>
