@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 // style
 import "./Recipe.scss";
 
@@ -59,7 +59,9 @@ const Recipe = () => {
 					<p className="recipe__info__summary__text">
 						{specificRecipe.summary}
 					</p>
-					<button type="button">go home</button>
+					<button type="button">
+						<Link to="/">go home</Link>
+					</button>
 				</div>
 				<img src={specificRecipe.image} alt={specificRecipe.title} />
 			</section>
