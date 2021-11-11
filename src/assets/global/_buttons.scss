@@ -1,0 +1,14 @@
+.btn {
+	padding: 0.4rem 1rem;
+	border: 2px solid;
+	border-radius: 0;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+	&--fill {
+		border-color: var(--redColor);
+	}
+	&--sm {
+		padding: 0.2rem 0.5rem;
+	}
+}
