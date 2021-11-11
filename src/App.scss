@@ -27,12 +27,35 @@
 		&__info {
 			padding: 0.6rem 0;
 			&__title {
+				margin-bottom: 1rem;
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
 				font-size: 1.2rem;
 				font-weight: 500;
 				color: var(--darkRedColor);
+			}
+			&__more-info {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				ul {
+					display: flex;
+					align-items: center;
+					column-gap: 1.4rem;
+					li {
+						font-size: 0.9rem;
+						i {
+							margin-right: 0.3rem;
+							color: var(--grayColor300);
+						}
+						span {
+							font-size: 0.8rem;
+							font-weight: 500;
+							color: var(--grayColor300);
+						}
+					}
+				}
 			}
 		}
 	}
