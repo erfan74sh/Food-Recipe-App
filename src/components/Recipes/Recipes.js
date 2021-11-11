@@ -17,10 +17,28 @@ const Recipes = ({ recipes }) => {
 									>
 										{recipe.title}
 									</p>
+									<div className="query-foods__food-card__info__more-info">
+										<Link to={`/recipe/${recipe.id}`}>
+											<button type="button" className="btn btn--fill btn--sm">
+												see recipe
+											</button>
+										</Link>
+										<ul>
+											<li>
+												<i class="fas fa-user-friends"></i>
+												<span>{recipe.servings}</span>
+											</li>
+											<li>
+												<i class="fas fa-clock"></i>
+												<span>{recipe.readyInMinutes}&#x2032;</span>
+											</li>
+											<li>
+												<i class="fas fa-heart"></i>
+												<span>{recipe.aggregateLikes}</span>
+											</li>
+										</ul>
+									</div>
 								</div>
-								<Link to={`/recipe/${recipe.id}`}>
-									<button type="button">see recipe</button>
-								</Link>
 							</div>
 						);
 					})}
