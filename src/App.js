@@ -15,12 +15,13 @@ function App() {
 		const getRecipe = async () => {
 			try {
 				apiCall = await fetch(
-					`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}`
+					`https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=12&apiKey=${apiKey}`
 				);
 				if (!apiCall.ok) {
 					throw apiCall.status;
 				}
 				data = await apiCall.json();
+				console.log(data.results);
 				setRecipes(data.results);
 			} catch (e) {
 				console.error(`error code: ${e}`);
@@ -34,13 +35,13 @@ function App() {
 		e.preventDefault();
 		const query = e.target.elements.recipeName.value;
 		apiCall = await fetch(
-			`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${apiKey}`
+			`https://api.spoonacular.com/recipes/complexSearch?query=${query}&addRecipeInformation=true&number=12&apiKey=${apiKey}`
 		);
 		data = await apiCall.json();
 		setRecipes(data.results);
 	};
 	return (
-		<div>
+		<div className="container">
 			{errors.length === 0 ? (
 				<>
 					<Form getRecipe1={getRecipe1} />
