@@ -6,7 +6,7 @@ import "./Recipe.scss";
 import Loader from "../../assets/loading/Loading.svg";
 
 const Recipe = () => {
-	let params = useParams();
+	const params = useParams();
 
 	const [showInstruction, setShowInstruction] = useState(false);
 
@@ -33,7 +33,7 @@ const Recipe = () => {
 			}
 		};
 		getSpecificRecipe();
-	}, []);
+	}, [params]);
 
 	return (
 		<main className="recipe">
