@@ -44,40 +44,59 @@ const Recipe = () => {
 							<h1 className="recipe__info__summary__title">
 								{specificRecipe.title}
 							</h1>
-							<ul className="recipe__info__summary__status">
-								<div>
-									<li>
-										<span>
-											<i className="fas fa-dollar-sign"></i>
-										</span>
-										<span>{`$${specificRecipe.pricePerServing} per serving`}</span>
-									</li>
-									<li>
-										<span>
-											<i className="fas fa-heart"></i>
-										</span>
-										<span>{`${specificRecipe.aggregateLikes} likes`}</span>
-									</li>
+							<div className="recipe__info__summary__info">
+								<div className="recipe__info__summary__info__status">
+									<ul>
+										<div>
+											<li>
+												<span>
+													<i className="fas fa-dollar-sign"></i>
+												</span>
+												<span>{`$${specificRecipe.pricePerServing} per serving`}</span>
+											</li>
+											<li>
+												<span>
+													<i className="fas fa-heart"></i>
+												</span>
+												<span>{`${specificRecipe.aggregateLikes} likes`}</span>
+											</li>
+										</div>
+										<div>
+											<li>
+												<span>
+													<i className="fas fa-clock"></i>
+												</span>
+												<span>{`ready in ${specificRecipe.readyInMinutes} minutes`}</span>
+											</li>
+											<li>
+												<span>
+													<i className="fas fa-star"></i>
+												</span>
+												<span>{`Spoonacular Score: ${specificRecipe.spoonacularScore}%`}</span>
+											</li>
+										</div>
+									</ul>
+									<p
+										dangerouslySetInnerHTML={{ __html: specificRecipe.summary }}
+									></p>
 								</div>
-								<div>
-									<li>
-										<span>
-											<i className="fas fa-clock"></i>
-										</span>
-										<span>{`ready in ${specificRecipe.readyInMinutes} minutes`}</span>
-									</li>
-									<li>
-										<span>
-											<i className="fas fa-star"></i>
-										</span>
-										<span>{`Spoonacular Score: ${specificRecipe.spoonacularScore}%`}</span>
-									</li>
+								<div className="recipe__info__summary__info__ingredients">
+									<h2>Ingredients</h2>
+									<ul>
+										{specificRecipe.extendedIngredients.map((item) => {
+											return (
+												<li key={item.id}>
+													<h4>{item.name}:</h4>
+													<div>
+														<span>{item.amount}</span>
+														<span>{item.unit}</span>
+													</div>
+												</li>
+											);
+										})}
+									</ul>
 								</div>
-							</ul>
-							<p
-								className="recipe__info__summary__text"
-								dangerouslySetInnerHTML={{ __html: specificRecipe.summary }}
-							></p>
+							</div>
 							<button type="button">
 								<Link to="/">go home</Link>
 							</button>
