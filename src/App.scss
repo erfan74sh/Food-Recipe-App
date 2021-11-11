@@ -1,16 +1,23 @@
+.container {
+	background-color: var(--grayColor100);
+}
+// todo: remove styles bellow to it's component
 .query-foods {
 	display: flex;
 	justify-content: center;
+	padding: 2rem 0;
 	.container {
 		display: flex;
 		justify-content: start;
 		flex-wrap: wrap;
+		gap: 1.5rem;
 		max-width: 75rem;
 		border-top: 1px solid rgb(230, 230, 230);
 	}
 	&__food-card {
-		width: 18.75rem;
-		padding: 1rem;
+		width: (75rem - 4.5rem)/4;
+		padding: 0.5rem;
+		background-color: #fff;
 
 		img {
 			width: 100%;
@@ -18,9 +25,15 @@
 			object-fit: cover;
 		}
 		&__info {
-			padding: 0.8rem 0.4rem;
+			padding: 0.6rem 0;
 			// background-color: gray;
 			&__title {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				font-size: 1.2rem;
+				font-weight: 500;
+				color: var(--darkRedColor);
 			}
 		}
 	}
