@@ -7,20 +7,19 @@ import "./App.scss";
 
 function App() {
 	const apiKey = "9fb125e6a4c34f5db288d1e22f2832ed";
-	let apiCall, data;
 	const [errors, setErrors] = useState("");
 
 	const [recipes, setRecipes] = useState([]);
 	useEffect(() => {
 		const getRecipe = async () => {
 			try {
-				apiCall = await fetch(
+				const apiCall = await fetch(
 					`https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&number=12&apiKey=${apiKey}`
 				);
 				if (!apiCall.ok) {
 					throw apiCall.status;
 				}
-				data = await apiCall.json();
+				const data = await apiCall.json();
 				console.log(data.results);
 				setRecipes(data.results);
 			} catch (e) {
@@ -34,10 +33,10 @@ function App() {
 	const getRecipe1 = async (e) => {
 		e.preventDefault();
 		const query = e.target.elements.recipeName.value;
-		apiCall = await fetch(
+		const apiCall = await fetch(
 			`https://api.spoonacular.com/recipes/complexSearch?query=${query}&addRecipeInformation=true&number=12&apiKey=${apiKey}`
 		);
-		data = await apiCall.json();
+		const data = await apiCall.json();
 		setRecipes(data.results);
 	};
 	return (
