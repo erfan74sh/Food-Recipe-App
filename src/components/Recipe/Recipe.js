@@ -45,13 +45,13 @@ const Recipe = () => {
 								<div>
 									<li>
 										<span>
-											<i class="fas fa-dollar-sign"></i>
+											<i className="fas fa-dollar-sign"></i>
 										</span>
 										<span>{`$${specificRecipe.pricePerServing} per serving`}</span>
 									</li>
 									<li>
 										<span>
-											<i class="fas fa-heart"></i>
+											<i className="fas fa-heart"></i>
 										</span>
 										<span>{`${specificRecipe.aggregateLikes} likes`}</span>
 									</li>
@@ -59,13 +59,13 @@ const Recipe = () => {
 								<div>
 									<li>
 										<span>
-											<i class="fas fa-clock"></i>
+											<i className="fas fa-clock"></i>
 										</span>
 										<span>{`ready in ${specificRecipe.readyInMinutes} minutes`}</span>
 									</li>
 									<li>
 										<span>
-											<i class="fas fa-star"></i>
+											<i className="fas fa-star"></i>
 										</span>
 										<span>{`Spoonacular Score: ${specificRecipe.spoonacularScore}%`}</span>
 									</li>

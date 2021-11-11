@@ -12,7 +12,7 @@ const Recipes = ({ recipes }) => {
 								<div className="query-foods__food-card__image">
 									{recipe.vegan && (
 										<span title="this recipe is good for vegans">
-											<i class="fas fa-leaf"></i>
+											<i className="fas fa-leaf"></i>
 										</span>
 									)}
 									<img src={recipe.image} alt={recipe.title} />
@@ -32,15 +32,15 @@ const Recipes = ({ recipes }) => {
 										</Link>
 										<ul>
 											<li>
-												<i class="fas fa-user-friends"></i>
+												<i className="fas fa-user-friends"></i>
 												<span>{recipe.servings}</span>
 											</li>
 											<li>
-												<i class="fas fa-clock"></i>
+												<i className="fas fa-clock"></i>
 												<span>{recipe.readyInMinutes}&#x2032;</span>
 											</li>
 											<li>
-												<i class="fas fa-heart"></i>
+												<i className="fas fa-heart"></i>
 												<span>{recipe.aggregateLikes}</span>
 											</li>
 										</ul>
