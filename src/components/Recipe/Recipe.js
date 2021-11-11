@@ -8,8 +8,11 @@ import Loader from "../../assets/loading/Loading.svg";
 const Recipe = () => {
 	let params = useParams();
 
+	const [showInstruction, setShowInstruction] = useState(false);
+
 	const [errors, setErrors] = useState("");
 
+	const [instruction, setInstruction] = useState([]);
 	const [specificRecipe, setSpecificRecipe] = useState({});
 	useEffect(() => {
 		const apiKey = "9fb125e6a4c34f5db288d1e22f2832ed";
@@ -22,8 +25,8 @@ const Recipe = () => {
 					throw res.status;
 				}
 				const data = await res.json();
-				console.log(data);
 				setSpecificRecipe(data);
+				setInstruction(data.analyzedInstructions);
 			} catch (e) {
 				console.error(`error code: ${e}`);
 				setErrors(e);
@@ -81,10 +84,38 @@ const Recipe = () => {
 						</div>
 						<img src={specificRecipe.image} alt={specificRecipe.title} />
 					</section>
-					<section className="recipe__instructions"></section>
+					<section className="recipe__instructions">
+						<div className="recipe__instructions__title">
+							<h2 onClick={() => setShowInstruction(!showInstruction)}>
+								Instruction
+							</h2>
+							<i
+								className={`fas fa-angle-down ${
+									showInstruction ? "move-up" : ""
+								}`}
+								onClick={() => setShowInstruction(!showInstruction)}
+							></i>
+						</div>
+						<ul
+							className={`recipe__instructions__steps ${
+								showInstruction ? "show-instruction" : ""
+							}`}
+						>
+							{instruction.map((item) => {
+								return item.steps.map((step) => {
+									return (
+										<li key={step.number}>
+											<span>{step.number}.</span>
+											<p>{step.step}</p>
+										</li>
+									);
+								});
+							})}
+						</ul>
+					</section>
 				</>
 			) : errors.length === 0 ? (
-				<img src={Loader} />
+				<img src={Loader} alt="loader" />
 			) : (
 				<>
 					<h1>Ooops! Somthing Bad Happend</h1>
