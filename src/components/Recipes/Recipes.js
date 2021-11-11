@@ -19,7 +19,7 @@ const Recipes = ({ recipes }) => {
 									</p>
 								</div>
 								<Link to={`/recipe/${recipe.id}`}>
-									<button type="button">see more</button>
+									<button type="button">see recipe</button>
 								</Link>
 							</div>
 						);
