@@ -20,6 +20,7 @@ function App() {
 					throw apiCall.status;
 				}
 				const data = await apiCall.json();
+				// todo : remove line bellow at the end
 				console.log(data.results);
 				setRecipes(data.results);
 			} catch (e) {
