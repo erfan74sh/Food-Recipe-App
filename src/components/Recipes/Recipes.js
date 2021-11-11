@@ -11,7 +11,10 @@ const Recipes = ({ recipes }) => {
 							<div key={recipe.id} className="query-foods__food-card">
 								<img src={recipe.image} alt={recipe.title} />
 								<div className="query-foods__food-card__info">
-									<p className="query-foods__food-card__info__title">
+									<p
+										className="query-foods__food-card__info__title"
+										title={recipe.title}
+									>
 										{recipe.title}
 									</p>
 								</div>
