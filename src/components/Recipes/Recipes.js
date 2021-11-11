@@ -9,7 +9,14 @@ const Recipes = ({ recipes }) => {
 					{recipes.map((recipe) => {
 						return (
 							<div key={recipe.id} className="query-foods__food-card">
-								<img src={recipe.image} alt={recipe.title} />
+								<div className="query-foods__food-card__image">
+									{recipe.vegan && (
+										<span title="this recipe is good for vegans">
+											<i class="fas fa-leaf"></i>
+										</span>
+									)}
+									<img src={recipe.image} alt={recipe.title} />
+								</div>
 								<div className="query-foods__food-card__info">
 									<p
 										className="query-foods__food-card__info__title"
