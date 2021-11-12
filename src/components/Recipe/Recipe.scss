@@ -33,7 +33,7 @@
 				&__status {
 					display: flex;
 					flex-direction: column;
-					ul {
+					&__icons {
 						width: 100%;
 						display: flex;
 						align-items: center;
@@ -61,6 +61,19 @@
 									font-size: 0.8rem;
 								}
 							}
+						}
+					}
+					&__badges {
+						display: flex;
+						column-gap: 0.5rem;
+						margin-top: 0.5rem;
+						li {
+							padding: 0.2rem 0.4rem;
+							background-color: var(--grayColor50);
+							font-size: 0.7rem;
+							font-weight: 500;
+							color: var(--grayColor400);
+							border: 2px solid var(--grayColor100);
 						}
 					}
 					p {
