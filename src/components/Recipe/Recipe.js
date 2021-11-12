@@ -47,7 +47,7 @@ const Recipe = () => {
 							</h1>
 							<div className="recipe__info__summary__info">
 								<div className="recipe__info__summary__info__status">
-									<ul>
+									<ul className="recipe__info__summary__info__status__icons">
 										<div>
 											<li>
 												<span>
@@ -90,6 +90,11 @@ const Recipe = () => {
 												<span>{`${specificRecipe.nutrition.nutrients[0].amount} ${specificRecipe.nutrition.nutrients[0].unit} per serving`}</span>
 											</li>
 										</div>
+									</ul>
+									<ul className="recipe__info__summary__info__status__badges">
+										{specificRecipe.diets.map((diet) => {
+											return <li>{diet}</li>;
+										})}
 									</ul>
 									<p
 										dangerouslySetInnerHTML={{ __html: specificRecipe.summary }}
