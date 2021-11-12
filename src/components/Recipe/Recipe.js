@@ -96,25 +96,54 @@ const Recipe = () => {
 											return <li>{diet}</li>;
 										})}
 									</ul>
+									<div className="recipe__info__summary__info__status__calories-breakdown">
+										<ul className="recipe__info__summary__info__status__calories-breakdown__diagram">
+											<li
+												style={{
+													width:
+														specificRecipe.nutrition.caloricBreakdown
+															.percentCarbs + "%",
+												}}
+											></li>
+											<li
+												style={{
+													width:
+														specificRecipe.nutrition.caloricBreakdown
+															.percentFat + "%",
+												}}
+											></li>
+											<li
+												style={{
+													width:
+														specificRecipe.nutrition.caloricBreakdown
+															.percentProtein + "%",
+												}}
+											></li>
+										</ul>
+										<ul className="recipe__info__summary__info__status__calories-breakdown__legend">
+											<li>
+												<span>carbs:</span>
+												<span>
+													{specificRecipe.nutrition.nutrients[4].amount} gr
+												</span>
+											</li>
+											<li>
+												<span>fat:</span>
+												<span>
+													{specificRecipe.nutrition.nutrients[1].amount} gr
+												</span>
+											</li>
+											<li>
+												<span>protein:</span>
+												<span>
+													{specificRecipe.nutrition.nutrients[8].amount} gr
+												</span>
+											</li>
+										</ul>
+									</div>
 									<p
 										dangerouslySetInnerHTML={{ __html: specificRecipe.summary }}
 									></p>
-								</div>
-								<div className="recipe__info__summary__info__ingredients">
-									<h2>Ingredients</h2>
-									<ul>
-										{specificRecipe.extendedIngredients.map((item) => {
-											return (
-												<li key={item.id}>
-													<h4>{item.name}:</h4>
-													<div>
-														<span>{item.amount}</span>
-														<span>{item.unit}</span>
-													</div>
-												</li>
-											);
-										})}
-									</ul>
 								</div>
 							</div>
 							<button type="button">
