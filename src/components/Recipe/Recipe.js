@@ -9,6 +9,7 @@ const Recipe = () => {
 	const params = useParams();
 
 	const [showInstruction, setShowInstruction] = useState(false);
+	const [showIngridients, setShowIngridients] = useState(false);
 
 	const [errors, setErrors] = useState("");
 
@@ -178,6 +179,36 @@ const Recipe = () => {
 										</li>
 									);
 								});
+							})}
+						</ul>
+					</section>
+					<section className="recipe__ingridients">
+						<div className="recipe__ingridients__title">
+							<h2 onClick={() => setShowIngridients(!showIngridients)}>
+								Ingridients
+							</h2>
+							<i
+								className={`fas fa-angle-down ${
+									showIngridients ? "move-up" : ""
+								}`}
+								onClick={() => setShowIngridients(!showIngridients)}
+							></i>
+						</div>
+						<ul
+							className={`recipe__ingridients__steps ${
+								showIngridients ? "show-ingridients" : ""
+							}`}
+						>
+							{specificRecipe.extendedIngredients.map((item) => {
+								return (
+									<li key={item.id}>
+										<h4>{item.name}:</h4>
+										<div>
+											<span>{item.amount}</span>
+											<span>{item.unit}</span>
+										</div>
+									</li>
+								);
 							})}
 						</ul>
 					</section>
