@@ -19,13 +19,14 @@ const Recipe = () => {
 		const getSpecificRecipe = async () => {
 			try {
 				const res = await fetch(
-					`https://api.spoonacular.com/recipes/${params.recipeId}/information?apiKey=${apiKey}`
+					`https://api.spoonacular.com/recipes/${params.recipeId}/information?includeNutrition=true&apiKey=${apiKey}`
 				);
 				if (!res.ok) {
 					throw res.status;
 				}
 				const data = await res.json();
 				setSpecificRecipe(data);
+				console.log(data);
 				setInstruction(data.analyzedInstructions);
 			} catch (e) {
 				console.error(`error code: ${e}`);
@@ -73,6 +74,20 @@ const Recipe = () => {
 													<i className="fas fa-star"></i>
 												</span>
 												<span>{`Spoonacular Score: ${specificRecipe.spoonacularScore}%`}</span>
+											</li>
+										</div>
+										<div>
+											<li>
+												<span>
+													<i className="fas fa-user-friends"></i>
+												</span>
+												<span>{`${specificRecipe.servings} servings`}</span>
+											</li>
+											<li>
+												<span>
+													<i className="fas fa-burn"></i>
+												</span>
+												<span>{`${specificRecipe.nutrition.nutrients[0].amount} ${specificRecipe.nutrition.nutrients[0].unit} per serving`}</span>
 											</li>
 										</div>
 									</ul>
