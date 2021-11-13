@@ -63,6 +63,7 @@ header {
 		&__filter {
 			width: 100%;
 			height: 30%;
+			padding: 2rem calc((100% - 1200px) / 2);
 			background-color: #fff;
 		}
 	}
