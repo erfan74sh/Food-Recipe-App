@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // components
-import Form from "./components/Form";
+import Header from "./components/Header";
 import Recipes from "./components/Recipes";
 // style
 import "./App.scss";
@@ -44,7 +44,7 @@ function App() {
 		<div className="container">
 			{errors.length === 0 ? (
 				<>
-					<Form getRecipe1={getRecipe1} />
+					<Header getRecipe1={getRecipe1} />
 					<Recipes recipes={recipes} />
 				</>
 			) : (
