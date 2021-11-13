@@ -5,12 +5,18 @@ import "./Header.scss";
 const Header = ({ getRecipe1 }) => {
 	return (
 		<header>
-			<section className="search-and-filter">
-				<form onSubmit={getRecipe1} className="search-and-filter__search">
-					<input type="text" name="recipeName" />
+			<form onSubmit={getRecipe1} className="search-and-filter">
+				<h1>Food Recipe App</h1>
+				<div className="search-and-filter__search">
+					<input
+						type="text"
+						name="recipeName"
+						placeholder="search for food, ingridients or..."
+					/>
 					<button>search</button>
-				</form>
-			</section>
+				</div>
+				<div className="search-and-filter__filter">filter section</div>
+			</form>
 		</header>
 	);
 };
