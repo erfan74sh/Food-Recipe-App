@@ -195,13 +195,18 @@ const Recipe = () => {
 							></i>
 						</div>
 						<ul
-							className={`recipe__ingridients__steps ${
+							className={`recipe__ingridients__items ${
 								showIngridients ? "show-ingridients" : ""
 							}`}
 						>
 							{specificRecipe.extendedIngredients.map((item) => {
 								return (
 									<li key={item.id}>
+										<img
+											src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`}
+											alt={item.name}
+											title={item.name}
+										/>
 										<h4>{item.name}:</h4>
 										<div>
 											<span>{item.amount}</span>
