@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // components
 import InputSelect from "../../Inputs/InputSelect";
 import InputText from "../../Inputs/InputText";
+import InputRange from "../../Inputs/InputRange/InputRange";
 // style
 import "./Filters.scss";
 
@@ -34,6 +35,42 @@ const Filters = () => {
 				/>
 				<InputSelect label="diet" placeHolder="choose diet" />
 				<InputSelect label="dish type" placeHolder="choose dish type" />
+				<InputSelect
+					label="include cuisine"
+					placeHolder="choose cuisine to include"
+				/>
+				<InputSelect
+					label="exclude cuisine"
+					placeHolder="choose cuisine to exclude"
+				/>
+				<InputText
+					label="include ingridients"
+					placeHolder="enter ingridient(s) to include"
+				/>
+				<InputText
+					label="exclude ingridients"
+					placeHolder="enter ingridient(s) to exclude"
+				/>
+				<InputRange label="calories range" />
+				<InputRange label="carbs range" />
+				<InputRange label="protein range" />
+				<InputRange label="fat range" />
+				<InputSelect label="intolerances" placeHolder="choose intolerances" />
+				<InputSelect
+					label="ready time"
+					placeHolder="enter ready time"
+					width="8.0625rem"
+				/>
+				<InputSelect
+					label="ready time"
+					placeHolder="enter ready time"
+					width="8.0625rem"
+					rMargin="auto"
+				/>
+				<div>
+					<button type="button">reset</button>
+					<button type="button">search</button>
+				</div>
 			</form>
 		</div>
 	);
