@@ -1,10 +1,12 @@
 import React from "react";
+// components
+import Filters from "./Filters/Filters";
 // style
 import "./Header.scss";
 
 const Header = ({ getRecipe1 }) => {
 	return (
-		<header>
+		<header id="header">
 			<form onSubmit={getRecipe1} className="search-and-filter">
 				<h1>Food Recipe App</h1>
 				<div className="search-and-filter__search">
@@ -17,7 +19,7 @@ const Header = ({ getRecipe1 }) => {
 						<button>search</button>
 					</div>
 				</div>
-				<div className="search-and-filter__filter">filter section</div>
+				<Filters />
 			</form>
 		</header>
 	);
