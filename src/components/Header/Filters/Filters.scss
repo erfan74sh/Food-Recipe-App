@@ -1,6 +1,6 @@
 .filters {
 	width: 100%;
-	height: 25%;
+	height: 11rem;
 	padding: 2rem calc((100% - 1200px) / 2);
 	overflow: hidden;
 	background-color: rgba(255, 255, 255, 0.95);
@@ -39,9 +39,12 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		gap: 1.5rem;
+		gap: 3rem 1.5rem;
 	}
 }
 .show-more-filters {
 	height: 70vh;
+	form {
+		gap: 1.5rem;
+	}
 }
