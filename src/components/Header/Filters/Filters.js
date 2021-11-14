@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // components
 import InputSelect from "../../Inputs/InputSelect";
 import InputText from "../../Inputs/InputText";
@@ -6,11 +6,16 @@ import InputText from "../../Inputs/InputText";
 import "./Filters.scss";
 
 const Filters = () => {
+	const [showMoreFilters, setShowMoreFilters] = useState(false);
+
 	return (
-		<div className="filters">
+		<div className={`filters ${showMoreFilters ? "show-more-filters" : ""}`}>
 			<header>
 				<h2>Advance search</h2>
-				<button type="button">
+				<button
+					type="button"
+					onClick={() => setShowMoreFilters(!showMoreFilters)}
+				>
 					<span>show more</span>
 					<span>
 						<i className="fas fa-filter"></i>
