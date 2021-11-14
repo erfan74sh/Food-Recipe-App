@@ -18,7 +18,11 @@ const Filters = () => {
 				>
 					<span>show more</span>
 					<span>
-						<i className="fas fa-filter"></i>
+						{showMoreFilters ? (
+							<i class="fas fa-times"></i>
+						) : (
+							<i className="fas fa-filter"></i>
+						)}
 					</span>
 				</button>
 			</header>
