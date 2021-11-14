@@ -3,6 +3,7 @@
 	height: 30%;
 	padding: 2rem calc((100% - 1200px) / 2);
 	background-color: #fff;
+	transition: 500ms;
 	header {
 		display: flex;
 		align-items: center;
@@ -39,4 +40,7 @@
 		flex-wrap: wrap;
 		gap: 1.5rem;
 	}
+}
+.show-more-filters {
+	height: 70vh;
 }
