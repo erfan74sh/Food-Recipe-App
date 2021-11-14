@@ -1,4 +1,7 @@
 import React from "react";
+// components
+import InputSelect from "../../Inputs/InputSelect";
+import InputText from "../../Inputs/InputText";
 // style
 import "./Filters.scss";
 
@@ -15,7 +18,13 @@ const Filters = () => {
 				</button>
 			</header>
 			<form>
-				<input type="text" />
+				<InputText
+					label="food name"
+					placeHolder="enter food name"
+					width="36.75rem"
+				/>
+				<InputSelect label="diet" placeHolder="choose diet" />
+				<InputSelect label="dish type" placeHolder="choose dish type" />
 			</form>
 		</div>
 	);
