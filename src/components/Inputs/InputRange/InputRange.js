@@ -1,9 +1,9 @@
 import React from "react";
 
-const InputRange = () => {
+const InputRange = ({ label, width = "17.625rem" }) => {
 	return (
-		<label>
-			range input
+		<label style={{ width: width }}>
+			{label}
 			<input type="range" />
 		</label>
 	);
