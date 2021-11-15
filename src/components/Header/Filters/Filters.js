@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Select from "react-select";
 // components
 import InputSelect from "../../Inputs/InputSelect";
 import InputText from "../../Inputs/InputText";
@@ -8,6 +9,12 @@ import "./Filters.scss";
 
 const Filters = () => {
 	const [showMoreFilters, setShowMoreFilters] = useState(false);
+
+	// const options = [
+	// 	{ value: "chocolate", label: "Chocolate" },
+	// 	{ value: "strawberry", label: "Strawberry" },
+	// 	{ value: "vanilla", label: "Vanilla" },
+	// ];
 
 	return (
 		<div className={`filters ${showMoreFilters ? "show-more-filters" : ""}`}>
@@ -34,6 +41,7 @@ const Filters = () => {
 					width="36.75rem"
 				/>
 				<InputSelect label="diet" placeHolder="choose diet" />
+				{/* <Select options={options} /> */}
 				<InputSelect label="dish type" placeHolder="choose dish type" />
 				<InputSelect
 					label="include cuisine"
