@@ -41,7 +41,7 @@
 		flex-wrap: wrap;
 		gap: 3rem 1.5rem;
 		transition: 200ms;
-		div {
+		& > div {
 			width: 17.625rem;
 			display: flex;
 			align-items: flex-end;
