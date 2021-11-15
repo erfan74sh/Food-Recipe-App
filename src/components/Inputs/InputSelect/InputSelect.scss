@@ -1,0 +1,15 @@
+.select-input {
+	&-container {
+		width: 100%;
+	}
+	&__control {
+		width: 100%;
+		font-size: 0.9rem;
+		// padding: 0.5rem 0.8rem;
+		border: 2px solid var(--brownColor);
+		outline: none;
+		&:focus {
+			border: 2px solid var(--redColor);
+		}
+	}
+}
