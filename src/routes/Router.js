@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // components
-import App from "../App";
+import Home from "../pages/Home.js";
 import Recipe from "../components/Recipe";
 
 const Router = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<App />} />
+				<Route path="/" element={<Home />} />
 				<Route path="/recipe/:recipeId" element={<Recipe />} />
 			</Routes>
 		</BrowserRouter>
