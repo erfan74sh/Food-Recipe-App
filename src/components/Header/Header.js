@@ -1,6 +1,6 @@
 import React from "react";
 // components
-import Filters from "./Filters/Filters";
+// import Filters from "./Filters/Filters";
 // style
 import "./Header.scss";
 
@@ -19,7 +19,7 @@ const Header = ({ getRecipe1 }) => {
 						<button>search</button>
 					</div>
 				</div>
-				<Filters />
+				{/* <Filters /> */}
 			</form>
 		</header>
 	);

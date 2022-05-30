@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Select from "react-select";
+// import Select from "react-select";
 // components
 import InputSelect from "../../Inputs/InputSelect";
 import InputText from "../../Inputs/InputText";
